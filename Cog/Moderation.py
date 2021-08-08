@@ -24,8 +24,8 @@ class Moderation(commands.Cog):
 
     @commands.comamnd
     async def kick(self, ctx, member: discord.Member, *, reason=None):
-        channel = discord.Embed(title=f"{member.name} has been kicked by {ctx.author.name}", description=f"Reason: {reason}", color=red) #This will send the message to the channel
-        user = discord.Embed(title=f"You have been kicked by {ctx.author.name} in {ctx.guild.name}", description=f"Reason: {reason}", color=red) #This will send the message to the user
+        channel = discord.Embed(title=f"{member.name} has been kicked by {ctx.author.name}", description=f"Reason: {reason}", color=red) 
+        user = discord.Embed(title=f"You have been kicked by {ctx.author.name} in {ctx.guild.name}", description=f"Reason: {reason}", color=red) 
         try:
             await member.send(embed=user)
         except:
