@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import statcord
 
 green = 0x11ff00
 red = 0xff0000
@@ -34,6 +35,16 @@ class Utility(commands.Cog):
             )
         
         await ctx.send(embed=pingEmbed)
+
+    @commands.command()
+    async def invite(self, ctx):
+        inviteEmbed=discord.Embed(
+            title="Invite the bot",
+            description="You can invite the bot [here](https://discord.com/api/oauth2/authorize?client_id=872091516837953546&permissions=8&scope=bot)",
+            color=blue
+        )
+
+        await ctx.send(embed=inviteEmbed)
 
 def setup(client):
     client.add_cog(Utility(client))
