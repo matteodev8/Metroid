@@ -46,5 +46,9 @@ class Utility(commands.Cog):
 
         await ctx.send(embed=inviteEmbed)
 
+    @commands.command()
+    async def debug(self, ctx):
+        await ctx.send(f"Debugger v1 by matteodev\nCommand executed by {ctx.author.name}")
+
 def setup(client):
     client.add_cog(Utility(client))
