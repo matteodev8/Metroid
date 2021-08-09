@@ -10,10 +10,9 @@ with open('config.json') as json_config:
 client = commands.Bot(command_prefix='m!')
 client.load_extension('jishaku')
 
-client.load_extension('Cog.Moderation')
 client.load_extension('Cog.Utility')
 client.load_extension('Cog.Status')
-client.load_extension('Cog.Stats')
+client.load_extension('Cog.Moderation')
 
 green = 0x11ff00
 red = 0xff0000

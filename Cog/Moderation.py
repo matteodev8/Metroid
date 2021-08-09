@@ -1,4 +1,3 @@
-from os import name
 import discord
 from discord.ext import commands
 
@@ -11,7 +10,7 @@ class Moderation(commands.Cog):
     def __init__(self, client):
         self.client = client       
 
-    @commands.command
+    @commands.command()
     async def ban(self, ctx, member : discord.Member, *, reason=None):
         channel = discord.Embed(title=f"{member.name} has been banned by {ctx.author.name}", description=f"Reason: {reason}", color=red) 
         user = discord.Embed(title=f"You have been banned by {ctx.author.name} in {ctx.guild.name}", description=f"Reason: {reason}", color=red) 
@@ -22,7 +21,7 @@ class Moderation(commands.Cog):
         await ctx.send(embed=channel)
         await member.ban(reason = reason) 
 
-    @commands.comamnd
+    @commands.command()
     async def kick(self, ctx, member: discord.Member, *, reason=None):
         channel = discord.Embed(title=f"{member.name} has been kicked by {ctx.author.name}", description=f"Reason: {reason}", color=red) 
         user = discord.Embed(title=f"You have been kicked by {ctx.author.name} in {ctx.guild.name}", description=f"Reason: {reason}", color=red) 

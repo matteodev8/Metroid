@@ -19,7 +19,7 @@ class Status(commands.Cog):
                 color=red
             )
             await ctx.send(embed=missingPermissionEmbed)
-            await ctx.message.add_reaction("\u274c")
+            await ctx.message.add_reaction(":x:")
 
         elif isinstance(error, commands.errors.BotMissingPermissions):
             botMissingPermissionEmbed=discord.Embed(
@@ -28,7 +28,7 @@ class Status(commands.Cog):
                 color=red
             )
             await ctx.send(embed=botMissingPermissionEmbed)
-            await ctx.message.add_reaction("\u274c")
+            await ctx.message.add_reaction(":x:")
 
         elif isinstance(error, commands.errors.MissingRequiredArgument):
             missingArgumentEmbed=discord.Embed(
@@ -37,7 +37,7 @@ class Status(commands.Cog):
                 color=red
             )
             await ctx.send(embed=missingArgumentEmbed)
-            await ctx.message.add_reaction("\u274c")
+            await ctx.message.add_reaction(":x:")
 
         elif isinstance(error, commands.errors.BadArgument):
             badArgumentEmbed=discord.Embed(
@@ -46,7 +46,7 @@ class Status(commands.Cog):
                 color=red
             )
             await ctx.send(embed=badArgumentEmbed)
-            await ctx.message.add_reaction("\u274c")
+            await ctx.message.add_reaction(":x:")
 
         elif isinstance(error, commands.errors.CommandNotFound):
             missingArgumentEmbed=discord.Embed(
@@ -55,7 +55,7 @@ class Status(commands.Cog):
                 color=red
             )
             await ctx.send(embed=missingArgumentEmbed)
-            await ctx.message.add_reaction("\u274c")
+            await ctx.message.add_reaction(":x:")
 
         elif isinstance(error, commands.errors.CommandInvokeError):
             commandInvokeEmbed=discord.Embed(
@@ -64,7 +64,10 @@ class Status(commands.Cog):
                 color=red
             )
             await ctx.send(embed=commandInvokeEmbed)
-            await ctx.message.add_reaction("\u26d4")
+            await ctx.message.add_reaction(":no_entry:")
 
 def setup(client):
     client.add_cog(Status(client))
+    
+
+        

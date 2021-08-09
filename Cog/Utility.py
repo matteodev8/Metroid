@@ -48,7 +48,15 @@ class Utility(commands.Cog):
 
     @commands.command()
     async def debug(self, ctx):
-        await ctx.send(f"Debugger v1 by matteodev\nCommand executed by {ctx.author.name}")
+        debugEmbed=discord.Embed(
+            title="mDebug",
+            description="Debugger by matteodev",
+            color=blue,
+        )
+        debugEmbed.add_field(name="Executed by", value=f"Command has been executed by {ctx.author.id}")
+        debugEmbed.footer("Version 1a")
+        
+        await ctx.send(embed=debugEmbed)
 
 def setup(client):
     client.add_cog(Utility(client))
