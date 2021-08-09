@@ -57,6 +57,15 @@ class Status(commands.Cog):
             await ctx.send(embed=missingArgumentEmbed)
             await ctx.message.add_reaction("\u274c")
 
+        elif isinstance(error, commands.errors.NotOwner):
+            notOwnerEmbed=discord.Embed(
+                title="Error :x:",
+                description="There was an error while executing this command: ```\nNOT_APPLICATION_OWNER\n```",
+                color=red
+            )
+            await ctx.send(embed=notOwnerEmbed)
+            await ctx.message.add_reaction("\u274c")
+
         elif isinstance(error, commands.errors.CommandInvokeError):
             commandInvokeEmbed=discord.Embed(
                 title="Critical :no_entry:",

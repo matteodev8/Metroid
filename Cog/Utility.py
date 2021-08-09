@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-import statcord
 
 green = 0x11ff00
 red = 0xff0000
@@ -54,9 +53,16 @@ class Utility(commands.Cog):
             color=blue,
         )
         debugEmbed.add_field(name="Executed by", value=f"Command has been executed by {ctx.author.id}")
-        debugEmbed.footer("Version 1a")
+        debugEmbed.set_footer(text="Version 1a.9.8.2021")
         
         await ctx.send(embed=debugEmbed)
+
+    @commands.command()
+    @commands.is_owner()
+    async def status(self, ctx, statusType, status):
+        await self.client.change_presence(activity=discord.Activity(type=getattr(discord.ActivityType, statusType), name=status))
+        await ctx.send(f"Changed status to {statusType} {status}")
+        
 
 def setup(client):
     client.add_cog(Utility(client))
