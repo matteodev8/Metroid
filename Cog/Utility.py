@@ -59,7 +59,7 @@ class Utility(commands.Cog):
 
     @commands.command()
     @commands.is_owner()
-    async def status(self, ctx, statusType, status):
+    async def status(self, ctx, statusType, *, status):
         await self.client.change_presence(activity=discord.Activity(type=getattr(discord.ActivityType, statusType), name=status))
         await ctx.send(f"Changed status to {statusType} {status}")
         
